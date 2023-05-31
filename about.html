@@ -1,0 +1,457 @@
+<!-- HTML document declaration -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index" />
+    <!-- Page title -->
+    <title>Bike King Borders</title>
+    <meta
+      name="description"
+      content="Bike King Borders is your go-to destination for top-quality bicycles, accessories, and expert service. Browse our selection online or visit us in-store today."
+    />
+    <title>
+      Bike King Borders - Cycling Gear and Accessories for Every Rider
+    </title>
+    <!-- External stylesheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/logo-no-bg.png" />
+    <!-- Preload fonts -->
+    <link
+      rel="preload"
+      href="style/Designer.otf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="style/bicycle-Regular.otf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="style/crowns.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Internal stylesheet -->
+    <link rel="stylesheet" href="./style/styles.css" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <!-- Bootstrap JavaScript bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <!-- Brand BKB Logo, image of a bike and bkb letter -->
+        <a class="navbar-brand" href="home.html">
+          <img
+            src="./images/logo-no-bg.png"
+            class="mt-0 pt-0"
+            height="100"
+            alt="BKB Logo, image of a bike and bkb letter"
+            loading="lazy"
+          />
+          <small class="small-headline">BIKE KING BORDERS</small>
+        </a>
+        <!-- Toggler for smaller screens -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarExample01"
+          aria-controls="navbarExample01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links ms-5 ps-5">
+            <!-- Home link -->
+            <li class="nav-item nav-link text-white p-2 m-2">
+              <a class="nav-link" href="home.html">Home </a>
+            </li>
+            <!-- Shop link -->
+
+            <li class="nav-item nav-link p-2 m-2">
+              <a class="nav-link about" href="shop.html">Shop</a>
+            </li>
+            <!-- Services link -->
+
+            <li class="nav-item nav-link p-2 m-2">
+              <a class="nav-link contact" href="services.html">Services</a>
+            </li>
+            <!-- Contact link -->
+
+            <li class="nav-item nav-link p-2 m-2">
+              <a class="nav-link contact" href="contact.html">Contact</a>
+            </li>
+            <!-- About link -->
+
+            <li class="nav-item nav-link p-2 m-2">
+              <a class="nav-link contact" href="about.html">About</a>
+            </li>
+
+            <li></li>
+          </ul>
+          <!-- END LINKS -->
+
+          <section class="cart-section d-grid float-end">
+            <div
+              class="cart-cont jumbotron jumbotron-fluid bg-transparent text-center"
+            >
+              <span class="shopping-cart-span-icon">
+                <i class="fas fa-shopping-cart"> </i>
+                <p>Basket</p>
+              </span>
+
+              <section class="cart-content">
+                <div class="cart-row">
+                  <div class="cart-container"></div>
+                  <div class="cart-total">
+                    <strong>TOTAL:</strong>
+                    <span class="cart-total-amount mt-2">£0</span>
+                  </div>
+                  <!-- PAYPAL CHECKOUT -->
+
+                  <div id="paypal-button-container"></div>
+
+                  <script
+                    src="https://www.paypal.com/sdk/js?client-id=test&currency=USD&intent=capture&enable-funding=venmo"
+                    data-sdk-integration-source="integrationbuilder"
+                  ></script>
+                  <script>
+                    const paypalButtonsComponent = paypal.Buttons({
+                      // optional styling for buttons
+                      // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
+                      style: {
+                        color: "gold",
+                        shape: "rect",
+                        label: "pay",
+                        layout: "vertical",
+                        width: "40px",
+                      },
+
+                      // set up the transaction
+                      createOrder: (data, actions) => {
+                        // pass in any options from the v2 orders create call:
+                        // https://developer.paypal.com/api/orders/v2/#orders-create-request-body
+                        const createOrderPayload = {
+                          purchase_units: [
+                            {
+                              amount: {
+                                value: "88.44",
+                              },
+                            },
+                          ],
+                        };
+
+                        return actions.order.create(createOrderPayload);
+                      },
+
+                      // finalize the transaction
+                      onApprove: (data, actions) => {
+                        const captureOrderHandler = (details) => {
+                          const payerName = details.payer.name.given_name;
+                          console.log("Transaction completed");
+                        };
+
+                        return actions.order
+                          .capture()
+                          .then(captureOrderHandler);
+                      },
+
+                      // handle unrecoverable errors
+                      onError: (err) => {
+                        console.error(
+                          "An error prevented the buyer from checking out with PayPal"
+                        );
+                      },
+                    });
+
+                    paypalButtonsComponent
+                      .render("#paypal-button-container")
+                      .catch((err) => {
+                        console.error("PayPal Buttons failed to render");
+                      });
+                  </script>
+
+                  <!-- PAYPAL CHECKOUT END -->
+                </div>
+              </section>
+            </div>
+          </section>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+    <section class="about-header">
+      <div class="text-center hero pt-4 mt-4">
+        <!-- header section -->
+        <h1 class="header-title text-center pt-4 mt-4">
+          <span
+            class="word p-3 m-4 animate__rubberBand animate__animated animate__delay-4s"
+          >
+            <span
+              class="header-letter animate__bounceInRight animate__animated animate__delay-2s"
+              >A</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-1s animate__slideInLeft"
+              >B</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-2s animate__rotateInDownLeft"
+              >O</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-1s animate__lightSpeedInRight"
+              >U</span
+            >
+            <span
+              class="header-letter animate__bounceInRight animate__animated animate__delay-1s"
+              >T</span
+            >
+          </span>
+          <span
+            class="word p-3 m-4 animate__jello animate__animated animate__delay-5s"
+          >
+            <span
+              class="header-letter animate__animated animate__delay-1s animate__slideInUp"
+              >U</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-2s animate__zoomIn"
+              >S</span
+            >
+          </span>
+          <span class="appear animate__animated animate__fadeInUp">
+            <img
+              src="./images/logo-no-bg.png"
+              class="me-2 logo-lg animate__animated animate__pulse animate__infinite animate__delay-1s"
+              height="150"
+              alt="BKB Logo, image of a bike and bkb letter, image of a bike and bkb letter"
+            />
+          </span>
+          <!-- BIKE KING BORDERS ANIMATIONS ON HEADER-->
+        </h1>
+      </div>
+
+      <!-- header  -->
+
+      <!-- COMPANY-INFO -->
+      <section class="company-info container about-container">
+        <h2
+          class="crown-symbol animate__animated animate__pulse animate__slow animate__infinite"
+        >
+          d
+        </h2>
+        <h1 class="header-2">WHAT IS LIKE TO BE KING</h1>
+
+        <p class="body-txt">
+          Bike King Borders is the largest bicycle showroom in the Scottish
+          Borders, with well over 100 bikes on the shop floor. We have a huge
+          range of Electric, Mountain, Hybrid Bikes from world-leading brands
+          covering all disciplines.
+        </p>
+
+        <p class="body-txt">
+          We will undoubtedly have a bike to suit every need. As well as the
+          bikes we have a large range of bike accessories, clothing for all
+          disciplines, huge stock of components both current and historical,
+          bike racks, lights and all other accessories to meet any riding need.
+        </p>
+        <p class="body-txt">
+          Group rides, hire bikes, demo days, promotional events, in-store talks
+          and presentations, we look forward to welcoming you in.
+        </p>
+
+        <p class="body-txt">
+          Our company is unique in the Borders due to our location and having
+          the benefit of brilliant cycle trails on their doorstep.
+        </p>
+
+        <p class="body-txt">
+          We pride ourselves in selling only quality products and guaranteeing
+          servicing and repair.
+        </p>
+      </section>
+
+      <!-- CYCLING-INFO  END-->
+
+      <!-- LOCATION-SECTION START -->
+
+      <section class="location container about-container">
+        <h2 class="crown-symbol">d</h2>
+        <h1 class="header-2">Melrose</h1>
+        <p class="body-txt">
+          The store itself is conveniently located in 264 Abbey Street, Melrose,
+          TD6 9ZX, UK. The picturesque town of Melrose is located next to the
+          Eildon Hills and is the birthplace of Rugby Sevens.
+        </p>
+        <p class="body-txt">
+          The triple peaks of the Eildon Hills are the most distinctive single
+          landmark in the Scottish Borders.
+        </p>
+        <p class="body-txt">
+          At their feet in the valley of the Tweed lies Melrose.
+        </p>
+        <p class="body-txt">
+          Ruined Melrose Abbey dates from 1136. A casket discovered believed to
+          contain the heart of Robert the Bruce was marked by a re-burial
+          ceremony and commemorative stone tablet.
+        </p>
+        <p class="body-txt">
+          The area around Melrose has been inhabited for thousands of years.
+        </p>
+        <p class="body-txt">
+          The Roman army arrived in AD79 or 80 and built a major fort nearby
+          named Trimontium, 'Place of the Three Hills'.
+        </p>
+        <p class="body-txt">
+          A signal station or shrine was built on the summit of the Eildon Hill
+          North. The Three Hills Roman Heritage Centre houses the Trimontium
+          Museum which is dedicated to Roman life in Scotland.
+        </p>
+        <!-- CYCLING-INFO -->
+        <section class="cycling-info container about-container">
+          <h4 class="header-4 mt-5 pt-5">MOUNTAIN BIKING</h4>
+          <p class="body-txt">
+            The Scottish Borders is a mountain biker’s paradise with routes to
+            suit every standard from absolute beginner to hardened professional.
+          </p>
+          <h4 class="header-4 mt-5 pt-5">LEISURE CYCLING</h4>
+          <p class="body-txt">
+            If you are looking for a gentler form of cycling, touring or simply
+            sight seeing from the saddle then there are quite literally endless
+            possibilities for different routes and trails. There are lots of
+            great routes around Melrose taking in popular attractions such as
+            Melrose Abbey, Abbotsford House, Scott’s View, The William Wallace
+            Statue, Dryburgh Abbey, Leaderfoot Viaduct, the Eildon Hills and the
+            river Tweed to name a few.
+          </p>
+          <!-- CYCLING-INFO -->
+        </section>
+      </section>
+      <!-- LOCATION -->
+      <!-- FOOTER section -->
+
+      <section class="footer">
+        <div class="mt-5 pt-5 pb-5 footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-xs-12 col-md-4 about-company">
+                <a href="home.html">
+                  <img
+                    src="./images/logo-no-bg.png"
+                    class="logo-sm animate__animated animate__pulse animate__infinite animate__delay-3s"
+                    alt="BKB Logo, image of a bike and bkb letter, image of a bike and bkb letter"
+                  />
+                </a>
+                <p class="pr-5 text-white footer-headline">
+                  Life is all about balance...
+                </p>
+                <p>
+                  <a href="#"><i class="fa fa-facebook-square p-2 fa-xl"></i></a
+                  ><a href="#"
+                    ><i class="fa fa-linkedin-square p-2 fa-xl"></i
+                  ></a>
+                </p>
+              </div>
+              <div class="col-lg-3 col-md-4 col-xs-12 links">
+                <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+                <ul class="m-2 p-2 footer-link">
+                  <li class="mt-2 pt-1 footer-link">
+                    <a href="home.html">Home</a>
+                  </li>
+                  <li class="mt-2 pt-1 footer-link">
+                    <a href="shop.html"> Shop</a>
+                  </li>
+                  <li class="mt-2 pt-1 footer-link">
+                    <a href="services.html">Services</a>
+                  </li>
+                  <li class="mt-2 pt-1 footer-link">
+                    <a href="contact.html">Contact</a>
+                  </li>
+                  <li class="mt-2 pt-1 footer-link">
+                    <a href="about.html">About</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-4 col-md-4 col-xs-12 contact-sec-footer">
+                <h4 class="mt-lg-0 mt-sm-4">Contact</h4>
+                <p>264 Abbey Street, Melrose, TD6 9ZX, UK</p>
+                <p class="mb-3">
+                  <i class="fa fa-phone mr-3"></i>(+44) 772145215
+                </p>
+                <p>
+                  <i class="fa fa-envelope-o mr-3"></i>info@bikekingborders.com
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col copyright">
+                <p class="">
+                  <small class="text-white-50"
+                    >© 2023 Claudio Sapia All right reserved</small
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FOOTER section -->
+
+      <script src="./js/index.js"></script>
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://kit.fontawesome.com/e953136701.js"
+        crossorigin="anonymous"
+      ></script>
+
+      <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+      ></script>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,594 @@
+<!-- HTML document declaration -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index" />
+    <!-- Page title -->
+    <title>Bike King Borders</title>
+    <meta
+      name="description"
+      content="Bike King Borders is your go-to destination for top-quality bicycles, accessories, and expert service. Browse our selection online or visit us in-store today."
+    />
+    <title>
+      Bike King Borders - Cycling Gear and Accessories for Every Rider
+    </title>
+    <!-- External stylesheet -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/logo-no-bg.png" />
+    <!-- Preload fonts -->
+    <link
+      rel="preload"
+      href="style/Designer.otf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="style/bicycle-Regular.otf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="style/crowns.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Internal stylesheet -->
+    <link rel="stylesheet" href="./style/styles.css" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <!-- Bootstrap JavaScript bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <!-- Brand BKB Logo, image of a bike and bkb letter -->
+        <a class="navbar-brand" href="home.html">
+          <img
+            src="./images/logo-no-bg.png"
+            class="mt-0 pt-0"
+            height="100"
+            alt="BKB Logo, image of a bike and bkb letter"
+            loading="lazy"
+          />
+          <small class="small-headline">BIKE KING BORDERS</small>
+        </a>
+        <!-- Toggler for smaller screens -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarExample01"
+          aria-controls="navbarExample01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links ms-5 ps-5">
+            <!-- Home link -->
+            <li class="nav-item nav-link text-white p-2 m-2">
+              <a class="nav-link" href="home.html">Home </a>
+            </li>
+            <!-- Shop link -->
+
+            <li class="nav-item nav-link p-2 m-2">
+              <a class="nav-link about" href="shop.html">Shop</a>
+            </li>
+            <!-- Services link -->
+
+            <li class="nav-item nav-link p-2 m-2">
+              <a class="nav-link contact" href="services.html">Services</a>
+            </li>
+            <!-- Contact link -->
+
+            <li class="nav-item nav-link p-2 m-2">
+              <a class="nav-link contact" href="contact.html">Contact</a>
+            </li>
+            <!-- About link -->
+
+            <li class="nav-item nav-link p-2 m-2">
+              <a class="nav-link contact" href="about.html">About</a>
+            </li>
+
+            <li></li>
+          </ul>
+          <!-- END LINKS -->
+
+          <section class="cart-section d-grid float-end">
+            <div
+              class="cart-cont jumbotron jumbotron-fluid bg-transparent text-center"
+            >
+              <span class="shopping-cart-span-icon">
+                <i class="fas fa-shopping-cart"> </i>
+                <p>Basket</p>
+              </span>
+
+              <section class="cart-content">
+                <div class="cart-row">
+                  <div class="cart-container"></div>
+                  <div class="cart-total">
+                    <strong>TOTAL:</strong>
+                    <span class="cart-total-amount mt-2">£0</span>
+                  </div>
+                  <!-- PAYPAL CHECKOUT -->
+
+                  <div id="paypal-button-container"></div>
+
+                  <script
+                    src="https://www.paypal.com/sdk/js?client-id=test&currency=USD&intent=capture&enable-funding=venmo"
+                    data-sdk-integration-source="integrationbuilder"
+                  ></script>
+                  <script>
+                    const paypalButtonsComponent = paypal.Buttons({
+                      // optional styling for buttons
+                      // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
+                      style: {
+                        color: "gold",
+                        shape: "rect",
+                        label: "pay",
+                        layout: "vertical",
+                        width: "40px",
+                      },
+
+                      // set up the transaction
+                      createOrder: (data, actions) => {
+                        // pass in any options from the v2 orders create call:
+                        // https://developer.paypal.com/api/orders/v2/#orders-create-request-body
+                        const createOrderPayload = {
+                          purchase_units: [
+                            {
+                              amount: {
+                                value: "88.44",
+                              },
+                            },
+                          ],
+                        };
+
+                        return actions.order.create(createOrderPayload);
+                      },
+
+                      // finalize the transaction
+                      onApprove: (data, actions) => {
+                        const captureOrderHandler = (details) => {
+                          const payerName = details.payer.name.given_name;
+                          console.log("Transaction completed");
+                        };
+
+                        return actions.order
+                          .capture()
+                          .then(captureOrderHandler);
+                      },
+
+                      // handle unrecoverable errors
+                      onError: (err) => {
+                        console.error(
+                          "An error prevented the buyer from checking out with PayPal"
+                        );
+                      },
+                    });
+
+                    paypalButtonsComponent
+                      .render("#paypal-button-container")
+                      .catch((err) => {
+                        console.error("PayPal Buttons failed to render");
+                      });
+                  </script>
+
+                  <!-- PAYPAL CHECKOUT END -->
+                </div>
+              </section>
+            </div>
+          </section>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar -->
+
+    <!-- HEADER -->
+    <section class="services-header">
+      <div class="container">
+        <div class="row text-center">
+          <h1 class="header-title mt-5">
+            <span
+              class="header-letter animate__animated animate__delay-2s animate__zoomInLeft"
+              >S</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-1s animate__zoomInUp"
+              >E</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-2s animate__zoomInDown"
+              >R</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-1s animate__slideInUp"
+              >V</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-2s animate__zoomIn"
+              >I</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-1s animate__rollIn"
+              >C</span
+            >
+            <span
+              class="header-letter animate__animated animate__delay-2s animate__rotateInDownLeft"
+              >E</span
+            >
+
+            <span
+              class="header-letter animate__animated animate__delay-2s animate__zoomInLeft"
+              >S</span
+            >
+
+            <span class="animate__animated animate__delay-2s animate__rollIn"
+              ><img
+                alt="BKB Logo, image of a bike and bkb letter"
+                class="logo-lg animate__animated animate__pulse animate__infinite animate__delay-1s"
+                loading="lazy"
+                src="./images/logo-no-bg.png"
+            /></span>
+          </h1>
+        </div>
+        <!-- HEADER -->
+
+        <!-- services container -->
+        <div class="row">
+          <div
+            class="col-lg-4 col-sm-12 text-center mt-2 pt-2 services-container"
+          >
+            <h4 class="header-4">Bike Repairs</h4>
+            <img
+              class="w-75 services-img"
+              src="images/repair.jpg"
+              alt="image displaying repairing tools"
+            />
+            <p class="services-p">
+              Our friendly, experienced bycicle mechanics can perform simple
+              repairs on punctures, gears and brakes, carry out standard
+              servicing or even a full re-build, all at very competitive prices.
+            </p>
+            <p class="services-p">
+              Take advantage of our
+              <span class="fw-bolder">fully insured repair service.</span> From
+              high end Mountain bikes, Hybrid bikes and road bikes, we fix any
+              bike any size.
+            </p>
+            <p class="services-p fw-bolder">
+              We offer a free 5 points safety/health check with any repair.
+            </p>
+          </div>
+          <div
+            class="col-lg-4 col-sm-12 text-center mt-2 pt-2 services-container"
+          >
+            <h4 class="header-4">Bike Hire</h4>
+            <img
+              class="w-75 services-img"
+              src="images/landscape-borders.jpg"
+              alt="hire bikes in line"
+            />
+            <p class="services-p">
+              With a stunning natural environment and amazing landscapes, Bike
+              King Borders Hire is the best way to experience the true character
+              of Scotland.
+            </p>
+            <p class="services-p">
+              We can assist you with
+              <span class="fw-bolder">
+                high-performance road, hybrid or mountain bikes hire in the
+                Borders.
+              </span>
+              We can also assist you with a
+              <span class="fw-bolder">
+                guided ride in one of our available trails</span
+              >
+            </p>
+            <p class="services-p">
+              - a ride with a local cyclist that knows the best routes,
+              photo-ops, and
+              <span class="fw-bolder">
+                post ride whiskey or coffee with Scottish sweets </span
+              >to ensure your Scottish cycling experience is sensational.
+            </p>
+          </div>
+          <div
+            class="col-lg-4 col-sm-12 text-center mt-2 pt-2 services-container"
+          >
+            <h4 class="header-4">Our guarantee</h4>
+            <img
+              class="w-50 services-img"
+              src="images/guarantee.svg"
+              alt="guarantee star image displaying a star pitext 100% satisfaction guaranteed"
+            />
+            <p class="services-p">
+              Here at Bike King Borders we take pride in the bikes we design,
+              build and sell and are happy that all of our bikes are of the
+              highest quality.
+            </p>
+            <p class="services-p">
+              That's why we offer a
+              <span class="fw-bolder">Limited Lifetime Warranty</span> on all of
+              our components of all Bike King Borders exclusive brand's for the
+              original owner.
+            </p>
+            <p class="services-p">
+              This means that whether you purchase a V-3, R-2, R-4,C-3 bike, we
+              will replace any component free of charge if there is a
+              manufacturing defect for the entire time you own the bike.
+            </p>
+
+            <p class="services-p fw-bolder">
+              Free servicing included when purchasing any of our bikes for one
+              year and one 5 points health/safety check.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- services section -->
+
+    <!-- trails section -->
+    <section class="trails mt-5 pt-5">
+      <div class="text-center">
+        <h4 class="header-4">Explore the Best Trails with Bike King Borders</h4>
+      </div>
+
+      <div id="trails-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators d-flex justify-content-center">
+          <button
+            type="button"
+            data-bs-target="#trails-carousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#trails-carousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#trails-carousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./images/trail-1.jpg"
+              class="d-block w-100"
+              alt="an image displaying cyclist on a mountain "
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./images/trail-2.jpg"
+              class="d-block w-100"
+              alt="picture displaying a cyclist on a path with a beautiful background of mountains"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./images/trail-3.jpg"
+              class="d-block w-100"
+              alt="picture displaying a cyclist looking over a beautiful background of mountains"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#trails-carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#trails-carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="trails-banner">
+        <div class="container bg-secondary text-white">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p class="trails-banner-text">
+                Join us for an unforgettable adventure through some of the most
+                scenic trails in the Borders.
+              </p>
+              <a href="contact.html" class="btn btn-primary trails-banner-btn"
+                >Learn More</a
+              >
+            </div>
+            <div class="col-md-6">
+              <img
+                src="./images/landscape-159294.svg"
+                alt="Trails Banner Image, a banner showing landscapes"
+                class="img-fluid trails-banner-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- trails section -->
+
+    <!-- SECTION testimonial -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="text-center mb-5 header-4">What our customers are saying</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div
+              class="testimonial-card text-center animate__animated animate__zoomIn animate__delay-1s"
+            >
+              <h4>John Doe</h4>
+              <p class="mb-0">
+                "I recently purchased a mountain bike from Bike Kings and I am
+                extremely happy with my purchase. The staff were knowledgeable
+                and friendly, and helped me find the perfect bike for my needs.
+                I would highly recommend Bike Kings to anyone looking for a new
+                bike or cycling accessories."
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="testimonial-card text-center animate__animated animate__zoomIn animate__delay-2s"
+            >
+              <h4>Jane Smith</h4>
+              <p class="mb-0">
+                "I had my bike serviced at Bike Kings and I was very impressed
+                with the quality of work and the quick turnaround time. The
+                staff were professional and kept me informed throughout the
+                process. I will definitely be using their services again in the
+                future."
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="testimonial-card text-center animate__animated animate__zoomIn animate__delay-3s"
+            >
+              <h4>David Williams</h4>
+              <p class="mb-0">
+                "I recently purchased a road bike from Bike Kings and I have to
+                say that I am extremely impressed with the service!"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer section -->
+    <section class="footer">
+      <div class="mt-5 pt-5 pb-5 footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-xs-12 col-md-4 about-company">
+              <a href="home.html">
+                <img
+                  src="./images/logo-no-bg.png"
+                  class="logo-sm animate__animated animate__pulse animate__infinite animate__delay-3s"
+                  alt="BKB Logo, image of a bike and bkb letter"
+                />
+              </a>
+              <p class="pr-5 text-white footer-headline">
+                Life is all about balance...
+              </p>
+              <p>
+                <a href="#"><i class="fa fa-facebook-square p-2 fa-xl"></i></a
+                ><a href="#"><i class="fa fa-linkedin-square p-2 fa-xl"></i></a>
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-12 links">
+              <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+              <ul class="m-2 p-2 footer-link">
+                <li class="mt-2 pt-1 footer-link">
+                  <a href="home.html">Home</a>
+                </li>
+                <li class="mt-2 pt-1 footer-link">
+                  <a href="shop.html"> Shop</a>
+                </li>
+                <li class="mt-2 pt-1 footer-link">
+                  <a href="services.html">Services</a>
+                </li>
+                <li class="mt-2 pt-1 footer-link">
+                  <a href="contact.html">Contact</a>
+                </li>
+                <li class="mt-2 pt-1 footer-link">
+                  <a href="about.html">About</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12 contact-sec-footer">
+              <h4 class="mt-lg-0 mt-sm-4">Contact</h4>
+              <p>264 Abbey Street, Melrose, TD6 9ZX, UK</p>
+              <p class="mb-3">
+                <i class="fa fa-phone mr-3"></i>(+44) 772145215
+              </p>
+              <p>
+                <i class="fa fa-envelope-o mr-3"></i>info@bikekingborders.com
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col copyright">
+              <p class="">
+                <small class="text-white-50"
+                  >© 2023 Claudio Sapia All right reserved</small
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/index.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/e953136701.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
